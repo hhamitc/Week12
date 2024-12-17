@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogetherCodeFirst", "TogerherCodeFirst\TogetherCodeFirst.csproj", "{C5885E3F-9E7C-4254-8CDE-65F71EC42BCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_CodeFirstBasicPractice", "01_CodeFirstBasicPractice\01_CodeFirstBasicPractice.csproj", "{F0F62E1D-12CF-47F8-BB2B-FF0B02CF2B8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C5885E3F-9E7C-4254-8CDE-65F71EC42BCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5885E3F-9E7C-4254-8CDE-65F71EC42BCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5885E3F-9E7C-4254-8CDE-65F71EC42BCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0F62E1D-12CF-47F8-BB2B-FF0B02CF2B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F62E1D-12CF-47F8-BB2B-FF0B02CF2B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F62E1D-12CF-47F8-BB2B-FF0B02CF2B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0F62E1D-12CF-47F8-BB2B-FF0B02CF2B8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
