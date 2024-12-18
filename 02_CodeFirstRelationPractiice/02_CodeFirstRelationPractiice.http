@@ -1,0 +1,6 @@
+@_02_CodeFirstRelationPractiice_HostAddress = http://localhost:5003
+
+GET {{_02_CodeFirstRelationPractiice_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

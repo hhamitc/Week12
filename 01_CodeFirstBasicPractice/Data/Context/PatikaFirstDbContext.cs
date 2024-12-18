@@ -12,6 +12,8 @@ namespace _01_CodeFirstBasicPractice.Data.Context
         {
             optionsBuilder.UseSqlServer(@"server=.\SQLEXPRESS; database=PatikaFirstDB1;   Trusted_Connection=true; TrustServerCertificate=true");
 
+            //optionsBuilder.UseSqlServer(@"server=LAPTOP-MCRDNKOK\SQLEXPRESS; database=PatikaFirstDB1; Trusted_Connection=true; TrustServerCertificate=true");
+
             base.OnConfiguring(optionsBuilder);
         }
 

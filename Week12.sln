@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogetherCodeFirst", "Togerh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_CodeFirstBasicPractice", "01_CodeFirstBasicPractice\01_CodeFirstBasicPractice.csproj", "{F0F62E1D-12CF-47F8-BB2B-FF0B02CF2B8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_CodeFirstRelationPractiice", "02_CodeFirstRelationPractiice\02_CodeFirstRelationPractiice.csproj", "{41E0EDE7-E653-41D3-AF69-6CC381C36A82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F0F62E1D-12CF-47F8-BB2B-FF0B02CF2B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0F62E1D-12CF-47F8-BB2B-FF0B02CF2B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0F62E1D-12CF-47F8-BB2B-FF0B02CF2B8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41E0EDE7-E653-41D3-AF69-6CC381C36A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41E0EDE7-E653-41D3-AF69-6CC381C36A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41E0EDE7-E653-41D3-AF69-6CC381C36A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41E0EDE7-E653-41D3-AF69-6CC381C36A82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
