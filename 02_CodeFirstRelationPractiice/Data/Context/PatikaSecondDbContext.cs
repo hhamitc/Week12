@@ -26,6 +26,11 @@ namespace _02_CodeFirstRelationPractiice.Data.Context
                 .HasForeignKey(p => p.UserId); // Gönderilerin kullanıcıları UserId ile belirlenir.
 
 
+            modelBuilder.Entity<UserEntity>()
+                .HasMany(u => u.Posts) // Bir user'ın biden çok gönderisi vardır.
+                .WithOne(p => p.User)   // Her gönderinin sadece bir kullanıcısı vardır.
+                .HasForeignKey(p => p.UserId); // Gönderilerin kullanıcıları UserId ile belirlenir.
+
 
             base.OnModelCreating(modelBuilder);
         }
