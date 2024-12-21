@@ -10,9 +10,9 @@ namespace _03_SurvivorWebApiPractice.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"server=.\SQLEXPRESS; database=PatikaCodeFirstDb2; Trusted_Connection=true; TrustServerCertificate=true"); //ConnectionString
+            optionsBuilder.UseSqlServer(@"server=.\SQLEXPRESS; database=SurvivorDb; Trusted_Connection=true; TrustServerCertificate=true"); //ConnectionString
 
-            //optionsBuilder.UseSqlServer(@"server=LAPTOP-MCRDNKOK\SQLEXPRESS; database=PatikaFirstDB1; Trusted_Connection=true; TrustServerCertificate=true");
+            //optionsBuilder.UseSqlServer(@"server=LAPTOP-MCRDNKOK\SQLEXPRESS; database=SurvivorDb; Trusted_Connection=true; TrustServerCertificate=true");
 
             base.OnConfiguring(optionsBuilder);
         }
