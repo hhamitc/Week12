@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_CodeFirstBasicPractice",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_CodeFirstRelationPractiice", "02_CodeFirstRelationPractiice\02_CodeFirstRelationPractiice.csproj", "{41E0EDE7-E653-41D3-AF69-6CC381C36A82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_SurvivorWebApiPractice", "03_SurvivorWebApiPractice\03_SurvivorWebApiPractice.csproj", "{497520E2-3FB1-4C49-9D15-6C87E425DDD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{41E0EDE7-E653-41D3-AF69-6CC381C36A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41E0EDE7-E653-41D3-AF69-6CC381C36A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41E0EDE7-E653-41D3-AF69-6CC381C36A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497520E2-3FB1-4C49-9D15-6C87E425DDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497520E2-3FB1-4C49-9D15-6C87E425DDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497520E2-3FB1-4C49-9D15-6C87E425DDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497520E2-3FB1-4C49-9D15-6C87E425DDD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
