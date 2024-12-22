@@ -1,6 +1,8 @@
 ﻿using _03_SurvivorWebApiPractice.Data;
+using _03_SurvivorWebApiPractice.DTOs.CompetitorDtos;
 using _03_SurvivorWebApiPractice.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace _03_SurvivorWebApiPractice.Controllers
 {
@@ -17,79 +19,122 @@ namespace _03_SurvivorWebApiPractice.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Competitor> GetAllCompetitors()
+        public ActionResult<IEnumerable<CompetitorDto>> GetAllCompetitors()
         {
-            var competitors = _context.Competitors.ToList();
+            List<Competitor> competitors = _context.Competitors.Include(c => c.Category).ToList();
 
-            return competitors;
+            List<CompetitorDto> competitorDtos = new List<CompetitorDto>();
+
+            foreach (Competitor competitor in competitors)
+            {
+                competitorDtos.Add(new CompetitorDto
+                {
+                    Id = competitor.Id,
+                    FirstName = competitor.FirstName,
+                    LastName = competitor.LastName,
+                    CategoryId = competitor.CategoryId,
+                    CategoryName = competitor.Category.Name
+
+                });
+            }
+
+            return Ok(competitorDtos);
         }
 
+
         [HttpGet("{id:int:min(1)}")]
-        public ActionResult<Competitor> GetCompetitorById(int id)
+        public ActionResult<CompetitorDto> GetCompetitorById(int id)
         {
-            var competitor = _context.Competitors.Find(id);
+            Competitor? competitor = _context.Competitors.Include(c => c.Category).FirstOrDefault(c => c.Id == id);
+
 
             if (competitor == null)
             {
                 return NotFound($"Yarışmacı Id {id} bulunamadı");
             }
 
-            return Ok(competitor);
+
+            CompetitorDto competitorDto = new CompetitorDto
+            {
+                Id = competitor.Id,
+                FirstName = competitor.FirstName,
+                LastName = competitor.LastName,
+                CategoryId = competitor.CategoryId,
+                CategoryName = competitor?.Category?.Name
+            };
+
+            return Ok(competitorDto);
 
         }
 
         [HttpPost]
-        public ActionResult<Competitor> CreateCompetitor([FromBody] Competitor competitor)
+        public IActionResult CreateCompetitor([FromBody] CreateCompetitorDto newCompetitor)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            Category? category = _context.Categories.Find(newCompetitor.CategoryId);
+
+            if (category == null)
+                return BadRequest("Kategori bulunamadı.");
+
+            Competitor competitor = new Competitor
+            {
+                FirstName = newCompetitor.FirstName,
+                LastName = newCompetitor.LastName,
+                CategoryId = newCompetitor.CategoryId
+            };
+
             _context.Competitors.Add(competitor);
 
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetCompetitorById), new { id = competitor.Id }, competitor);
+            return Created();
+
         }
 
+
+
         [HttpPut("update/{id:int:min(1)}")]
-        public IActionResult UpdateCompetitor(int id, [FromBody] Competitor competitor)
+        public IActionResult UpdateCompetitor(int id, [FromBody] UpdateCompetitorDto updateCompetitor)
         {
-            var competitorToUpdate = _context.Competitors.Find(id);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            Competitor? competitor = _context.Competitors.Find(id);
 
             if (competitor == null)
             {
                 return NotFound($"Yarışmacı Id {id} bulunamadı.");
             }
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
-            competitorToUpdate.FirstName = competitor.FirstName;
-            competitorToUpdate.LastName = competitor.LastName;
-            competitorToUpdate.CategoryId = competitor.CategoryId;
-            competitorToUpdate.ModifiedDate = DateTime.Now;
+            competitor.FirstName = updateCompetitor.FirstName;
+            competitor.LastName = updateCompetitor.LastName;
+            competitor.CategoryId = updateCompetitor.CategoryId;
+            competitor.ModifiedDate = DateTime.Now;
 
             _context.SaveChanges();
-
-            //return NoContent();
             return NoContent();
         }
+
 
         [HttpDelete("{id:int:min(1)}")]
         public IActionResult DeleteCompetitor(int id)
         {
-            var categoryToRemove = _context.Categories.Find(id);
+            Competitor? competitorToRemove = _context.Competitors.Find(id);
 
-            if (categoryToRemove == null)
+            if (competitorToRemove == null)
             {
                 return NotFound($"Yarışmacı Id {id} bulunamadı.");
             }
 
-            _context.Categories.Remove(categoryToRemove);
+            _context.Competitors.Remove(competitorToRemove);
             _context.SaveChanges();
             return NoContent();
         }
-
-
 
 
     }

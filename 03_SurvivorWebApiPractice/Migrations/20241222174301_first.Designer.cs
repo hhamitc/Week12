@@ -12,7 +12,7 @@ using _03_SurvivorWebApiPractice.Data;
 namespace _03_SurvivorWebApiPractice.Migrations
 {
     [DbContext(typeof(CompetitorCategoryContext))]
-    [Migration("20241221225321_first")]
+    [Migration("20241222174301_first")]
     partial class first
     {
         /// <inheritdoc />
